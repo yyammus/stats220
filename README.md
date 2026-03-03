@@ -8,4 +8,4 @@ A little about me:
 - I am taking STATS 220 because I like statistics
 - I am interested in learning about ecology
 
-A meme that captures how I currently feel about my university studies is ![](https://tenor.com/fLFhI2v2bqQ.gif)
+A meme that captures how I currently feel about my university studies is ![](https://media1.tenor.com/m/QUiMbDMpW-4AAAAd/cheetah-cheeta.gif)
