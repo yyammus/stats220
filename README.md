@@ -9,7 +9,7 @@ This is my repo for STATS 220.
 
 ![](https://media.tenor.com/TDAB8hp945AAAAAi/ishowspeed-i.gif)
 
-[Link to my Letterboxd:](https://letterboxd.com/yyammus/)
+[View my Letterboxd here!](https://letterboxd.com/yyammus/)
 
 * A meme that captures how I currently feel about my university studies is ...
 
