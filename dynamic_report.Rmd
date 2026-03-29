@@ -1,0 +1,92 @@
+---
+title: Auckland bus and mobile phone usage report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+
+```
+
+## About this data
+
+We are collecting bus and phone usage data to have a look at Aucklanders' habits when taking the bus. At the time of taking the bus, we ask our respondents:
+
+- What time of day it is,
+- If it is a week*day* or week*end*, and
+- What the proportion of people using their phones (that they can currently see) is.
+
+## What's going on with this data?
+
+You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
+
+```{r}
+pets <- c("cat", "dog", "turtle", "rabbit")
+best_pet <- pets[1]
+
+library(tidyverse)
+library(magick)
+
+## setting csv in r
+url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSUC04OdqkByKtoLhiOpbvoyzK17XSsSuEJY2pzDWmv-W71In0ZaZWVGkx2f3buUVVrWScmtoXqQjeR/pub?gid=2098826217&single=true&output=csv"
+logged_data <- read_csv(url)
+latest_data <-rename(logged_data, weekday_or_weekend=`Are you taking the bus on a weekday or weekend?`, time_of_day=`What is the time of day?`, phone_proportion=`Of the people you can currently see around you, what proportion of people are using a mobile device? Remember to include yourself in this calculation! (e.g. 0.4, 0.78)`)
+
+
+## setting up column names as vectors
+names(latest_data)
+weekday_or_weekend_vector <- latest_data$weekday_or_weekend
+time_of_day_vector <- latest_data$time_of_day
+phone_proportion_vector <- latest_data$phone_proportion
+
+
+## final code being used in the report
+min_phone_proportion <- min(phone_proportion_vector)
+max_phone_proportion <- max(phone_proportion_vector)
+mean_phone_proportion <- mean(phone_proportion_vector)
+
+phone_proportion_graph <- ggplot(data=latest_data) + 
+  geom_bar(aes(x=phone_proportion_vector), fill="#75B9BE") +
+  labs(title="Living in the present", subtitle="What is the proportion of people on Auckland buses who are using their mobile phones?", x="Proportion of people using mobile phones", y="Frequency")
+time_of_day_graph <- ggplot(data=latest_data) + 
+  geom_bar(aes(y=time_of_day_vector), fill="#575366") +
+  labs(title="What is the most frequent time of day that University of
+       Auckland students are taking the bus?", y="Time of day", x="Frequency")
+
+```
+
+According to our survey:
+
+* The mean percentage of people using their phones on Auckland buses is `r mean_phone_proportion * 100`%
+* The lowest observed percentage of people using their phones on Auckland buses is `r min_phone_proportion*100`%, while the highest observed percentage is `r max_phone_proportion*100`%.
+
+Let's visualise some of our data! Let's start with the proportion of people using their phones on the bus:
+
+
+```{r}
+phone_proportion_graph
+```
+
+
+Next, let's look at the times that people are taking the bus:
+
+
+```{r}
+time_of_day_graph
+```
+
+
+
+
+
+
+
+The best pet to have is a `r best_pet` of course!
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
+
+
