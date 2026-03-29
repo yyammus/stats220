@@ -38,7 +38,6 @@ latest_data <-rename(logged_data, weekday_or_weekend=`Are you taking the bus on 
 
 
 ## setting up column names as vectors
-names(latest_data)
 weekday_or_weekend_vector <- latest_data$weekday_or_weekend
 time_of_day_vector <- latest_data$time_of_day
 phone_proportion_vector <- latest_data$phone_proportion
@@ -78,15 +77,4 @@ Next, let's look at the times that people are taking the bus:
 ```{r}
 time_of_day_graph
 ```
-
-
-
-
-
-
-
-The best pet to have is a `r best_pet` of course!
-
-![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
-
 
